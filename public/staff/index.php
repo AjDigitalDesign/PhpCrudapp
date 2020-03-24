@@ -1,0 +1,17 @@
+<?php require_once('../../private/initialize.php'); ?>
+
+<?php $page_title = 'Staff Menu'; ?>
+<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<main role="main" id="content">
+    <div class="main-menu-area">
+        <div class="container">
+            <h1>Main Menu</h1>
+            <nav class="main-menu">
+                <ul class="subjects-menu">
+                    <li><a href="subjects/index.php">Subjects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</main>
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>

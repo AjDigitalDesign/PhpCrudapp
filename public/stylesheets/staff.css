@@ -1,0 +1,14 @@
+.main-header {
+  background-color: #343a40;
+  padding: 30px 0;
+  color: #fff;
+}
+#content {
+  min-height: 455px;
+}
+
+footer {
+  background-color: #343a40;
+  padding: 30px 0;
+  color: #fff;
+}
