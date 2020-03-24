@@ -8,7 +8,7 @@
             <h1>Main Menu</h1>
             <nav class="main-menu">
                 <ul class="subjects-menu">
-                    <li><a href="subjects/index.php">Subjects</a></li>
+                    <li><a href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a></li>
                 </ul>
             </nav>
         </div>
