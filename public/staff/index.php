@@ -7,8 +7,9 @@
         <div class="container">
             <h1>Main Menu</h1>
             <nav class="main-menu">
-                <ul class="subjects-menu">
-                    <li><a href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a></li>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a></li>
+                    <li class="list-group-item"><a href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a></li>
                 </ul>
             </nav>
         </div>

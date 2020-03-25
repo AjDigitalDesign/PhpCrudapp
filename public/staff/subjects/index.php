@@ -16,7 +16,7 @@ $subjects = [
             <div class="subject-listing-content">
                 <h1>Subjects</h1>
                 <div class="actions">
-                    <a href="" class="action">Create New Subject</a>
+                    <a href="<?php echo url_for('/staff/subjects/new.php'); ?>" class="action">Create New Subject</a>
                 </div>
                 <table class="table table-striped">
                     <thead class="thead-dark">
@@ -31,12 +31,12 @@ $subjects = [
                         </tr>
                         <?php foreach ($subjects as $subject) : ?>
                             <tr>
-                                <td><?php echo $subject['id']; ?></td>
-                                <td><?php echo $subject['position']; ?></td>
-                                <td><?php echo $subject['visible'] == 1 ? 'true' : 'false'; ?></td>
-                                <td><?php echo $subject['menu_name']; ?></td>
-                                <td><a href="<?php echo url_for('/staff/subjects/show.php?id=' . $subject['id']); ?>" class="action">View</a></td>
-                                <td><a href="" class="action">Edit</a></td>
+                                <td><?php echo h($subject['id']); ?></td>
+                                <td><?php echo h($subject['position']); ?></td>
+                                <td><?php echo h($subject['visible']) == 1 ? 'true' : 'false'; ?></td>
+                                <td><?php echo h($subject['menu_name']); ?></td>
+                                <td><a href="<?php echo url_for('/staff/subjects/show.php?id=' . h(u($subject['id']))); ?>" class="action">View</a></td>
+                                <td><a href="<?php echo url_for('/staff/subjects/edit.php?id=' . h(u($subject['id']))); ?>" class="action">Edit</a></td>
                                 <td><a href="" class="action">Delete</a></td>
                             </tr>
                         <?php endforeach; ?>
