@@ -16,7 +16,7 @@ $pages = [
             <div class="subject-listing-content">
                 <h1>Pages</h1>
                 <div class="actions">
-                    <a href="" class="action">Create New Page</a>
+                    <a href="<?php echo url_for('/staff/pages/new.php'); ?>" class="action">Create New Page</a>
                 </div>
                 <table class="table table-striped">
                     <thead class="thead-dark">
@@ -37,7 +37,7 @@ $pages = [
                                 <td><?php echo $page['visible'] == 1 ? 'true' : 'false'; ?></td>
                                 <td><?php echo h($page['menu_name']); ?></td>
                                 <td><a href="<?php echo url_for('/staff/pages/show.php?id=' . h(u($page['id']))); ?>" class="action">View</a></td>
-                                <td><a href="" class="action">Edit</a></td>
+                                <td><a href="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($page['id']))); ?>" class="action">Edit</a></td>
                                 <td><a href="" class="action">Delete</a></td>
                             </tr>
                         <?php endforeach; ?>
