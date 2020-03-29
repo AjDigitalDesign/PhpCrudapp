@@ -25,7 +25,7 @@ if (!isset($page_title)) {
 <body>
     <header class="main-header">
         <div class="container">
-            <h1>BusinessConsult Staff Area</h1>
+            <h1>ConsultBusiness Staff Area</h1>
         </div>
     </header>
     <main role="main">

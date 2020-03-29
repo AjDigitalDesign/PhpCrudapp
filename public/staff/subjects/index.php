@@ -1,11 +1,6 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
-$subjects = [
-    ['id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'About Business Consult'],
-    ['id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Consumer'],
-    ['id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Small Business'],
-    ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Commercial'],
-];
+$subject_set = find_all_subjects();
 ?>
 <?php $page_title = 'Subjects'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
@@ -29,7 +24,7 @@ $subjects = [
                             <th scope="col">&nbsp</th>
                             <th scope="col">&nbsp</th>
                         </tr>
-                        <?php foreach ($subjects as $subject) : ?>
+                        <?php while ($subject = mysqli_fetch_assoc($subject_set)) : ?>
                             <tr>
                                 <td><?php echo h($subject['id']); ?></td>
                                 <td><?php echo h($subject['position']); ?></td>
@@ -39,9 +34,12 @@ $subjects = [
                                 <td><a href="<?php echo url_for('/staff/subjects/edit.php?id=' . h(u($subject['id']))); ?>" class="action">Edit</a></td>
                                 <td><a href="" class="action">Delete</a></td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php endwhile; ?>
                     </thead>
                 </table>
+                <?php
+                mysqli_free_result($subject_set);
+                ?>
             </div>
         </div>
     </div>
